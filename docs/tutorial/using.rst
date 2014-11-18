@@ -221,7 +221,7 @@ If you see the log output::
     sine
     16:34:40 DEBUG    Closing port ('localhost', 5678)
 
-`idn` is only requested once, but waveform twice as you except. The reason
+`idn` is only requested once, but waveform twice as you expect. The reason
 is that `idn` is marked `read_once` in the driver as it does not change.
 The value is cached, preventing unnecessary communication with the instrument.
 
@@ -305,7 +305,7 @@ You can also **set** many values at once::
 
 or equivalently::
 
-    inst.update({'waveform': 'sine'}, 'amplitude': value})
+    inst.update({'waveform': 'sine', 'amplitude': value})
 
 but remember that internally these commands will be serialized as not all
 instruments are capable of dealing with multiple commands.
