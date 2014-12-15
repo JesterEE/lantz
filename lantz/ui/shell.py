@@ -31,7 +31,7 @@ class PatchedCmd(cmd.Cmd):
                 self.old_completer = readline.get_completer()
                 readline.set_completer(self.complete)
 
-                if 'libedit' in readline.__doc__:
+                if readline.__doc__ and 'libedit' in readline.__doc__:
                     # readline linked to BSD libedit
                     if self.completekey == 'tab':
                         key = '^I'
